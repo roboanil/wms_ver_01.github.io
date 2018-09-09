@@ -1,0 +1,11 @@
+Total Cubes
+Current Stock
+Space Available
+Cubes in Quarantine zone
+Stacks under fumigation
+Old Crop
+Top Lamina
+Burly
+Medium Lamina
+BPD
+Low Lamina

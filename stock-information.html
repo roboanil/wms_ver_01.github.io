@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Admin Template</title>
+        <meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
+        <meta name="author" content="Pike Web Development - https://www.pikephp.com">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Bootstrap CSS -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Font Awesome CSS -->
+        <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Custom CSS -->
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+        
+        <!-- BEGIN CSS for this page -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
+        <!-- END CSS for this page -->
+        
+</head>
+
+<body class="adminbody">
+
+<div id="main">
+
+    <!-- top bar navigation -->
+    <div class="headerbar">
+
+        <!-- LOGO -->
+        <div class="headerbar-left">
+            <a href="index.html" class="logo">Warehouse Management</a>
+        </div>
+
+        <nav class="navbar-custom">
+                    <ul class="list-inline float-right mb-0">
+                    
+                        
+                        <li class="list-inline-item dropdown notif">
+                            <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <img src="assets/images/avatars/admin.png" alt="Profile image" class="avatar-rounded">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5 class="text-overflow"><small>Hello, admin</small> </h5>
+                                </div>
+
+                                <!-- item-->
+                                <a href="pro-profile.html" class="dropdown-item notify-item">
+                                    <i class="fa fa-user"></i> <span>Profile</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="#" class="dropdown-item notify-item">
+                                    <i class="fa fa-power-off"></i> <span>Logout</span>
+                                </a>
+                                
+                               
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <ul class="list-inline menu-left mb-0">
+                        <li class="float-left">
+                            <button class="button-menu-mobile open-left">
+                                <i class="fa fa-fw fa-bars"></i>
+                            </button>
+                        </li>                        
+                    </ul>
+
+        </nav>
+
+    </div>
+    <!-- End Navigation -->
+    
+ 
+    <!-- Left Sidebar -->
+    <div class="left main-sidebar">
+    
+        <div class="sidebar-inner leftscroll">
+
+            <div id="sidebar-menu">
+        
+             <ul>
+
+                    <li class="submenu">
+                        <a href="index.html"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
+                    </li>
+
+                    
+                    <li class="submenu">
+                        <a href="stock-information.html"  class="active"><i class="fa fa-fw fa-table"></i> <span> Stock Information </span> </a>
+                    </li>
+                                        
+                    <li class="submenu">
+                        <a href="stock-visualisation.html" ><i class="fa fa-fw fa-th"></i> <span> Stock Visualization </span></a>
+                    </li>
+                    <li class="submenu">
+                        <a href="stock-inwards.html"><i class="fa fa-fw fa-indent"></i><span> Stock Inwards </span></a>
+                    </li>
+                    <li class="submenu">
+                        <a href="stock-outwards.html" ><i class="fa fa-fw fa-outdent"></i><span> Stock Outwards </span></a>
+                    </li>
+                    <li class="submenu">
+                        <a href="reports.html"><i class="fa fa-fw fa-file-text-o"></i> <span> Reports </span> </a>
+                    </li>
+            </ul>
+
+            <div class="clearfix"></div>
+
+            </div>
+        
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+    <!-- End Sidebar -->
+
+
+    <div class="content-page">
+    
+        <!-- Start content -->
+        <div class="content">
+            
+            <div class="container-fluid">
+                    
+                        <div class="row">
+                                    <div class="col-xl-12">
+                                            <div class="breadcrumb-holder">
+                                                    <h1 class="main-title float-left">Stock Information</h1>
+                                                    <ol class="breadcrumb float-right">
+                                                        <li class="breadcrumb-item">
+                                                            <input type="text" class="textbox" placeholder="Location">
+                                                            <input type="text" class="textbox" placeholder="Category">
+                                                            <input type="button" class="btn btn-primary" style="padding-top: 2px; padding-bottom:0px; margin-bottom: 2px;" id="searchCase"value="Search">
+                                                        </li>
+                                                    </ol>
+                                                    <div class="clearfix"></div>
+                                            </div>
+                                    </div>
+                        </div>
+                        <!-- end row -->
+
+                            <div class="row">
+                                    
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">                        
+                                    <div class="card mb-3">
+                                        <div class="card-header">
+                                            <h3>Total Stock Information</h3>
+                                        </div>
+                                            
+                                        <div class="card-body">                             
+                                            
+                                            <table class="table table-responsive-xl table-bordered">
+                                              <thead>
+                                                <tr>
+                                                  <th scope="col">Location</th>
+                                                  <th scope="col">Wharehouse</th>
+                                                  <th scope="col">Compartment</th>
+                                                  <th scope="col">Stack</th>
+                                                  <th scope="col">Top</th>
+                                                  <th scope="col">Medium</th>
+                                                  <th scope="col">Low</th>
+                                                  <th scope="col">Burly</th>
+                                                  <th scope="col">BPD</th>
+                                                  <th scope="col">Others</th>
+                                                  <th scope="col">Total</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                              <tr class="LocationRow" data-locid="1">
+                                                  <td>Hyderabad</td>
+                                                  <td>#</td>
+                                                  <td>#</td>
+                                                  <td>#</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>1000</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-1">
+                                                    <td rowspan="5"></td>
+                                                    <td rowspan="3">WH04589</td>
+                                                    <td>WH04589785S</td>
+                                                    <td>WH04589785S02</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-1">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S03</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-1">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S04</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-1">
+                                                  <td rowspan="2">WH04589</td>
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S05</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-1">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S06</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="LocationRow" data-locid="2">
+                                                  <td>Guntur</td>
+                                                  <td>#</td>
+                                                  <td>#</td>
+                                                  <td>#</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>1000</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-2">
+                                                    <td rowspan="5"></td>
+                                                    <td rowspan="3">WH04589</td>
+                                                    <td>WH04589785S</td>
+                                                    <td>WH04589785S02</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-2">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S03</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-2">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S04</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-2">
+                                                  <td rowspan="2">WH04589</td>
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S05</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-2">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S06</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="LocationRow" data-locid="3">
+                                                  <td>Ongole</td>
+                                                  <td>#</td>
+                                                  <td>#</td>
+                                                  <td>#</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>1000</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-3">
+                                                    <td rowspan="5"></td>
+                                                    <td rowspan="3">WH04589</td>
+                                                    <td>WH04589785S</td>
+                                                    <td>WH04589785S02</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-3">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S03</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-3">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S04</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-3">
+                                                  <td rowspan="2">WH04589</td>
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S05</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-3">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S06</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="LocationRow" data-locid="4">
+                                                  <td>Chennai</td>
+                                                  <td>#</td>
+                                                  <td>#</td>
+                                                  <td>#</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>1000</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-4">
+                                                    <td rowspan="5"></td>
+                                                    <td rowspan="3">WH04589</td>
+                                                    <td>WH04589785S</td>
+                                                    <td>WH04589785S02</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-4">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S03</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-4">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S04</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-4">
+                                                  <td rowspan="2">WH04589</td>
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S05</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-4">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S06</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="LocationRow" data-locid="5">
+                                                  <td>Bapatla</td>
+                                                  <td>#</td>
+                                                  <td>#</td>
+                                                  <td>#</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>100</td>
+                                                  <td>1000</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-5">
+                                                    <td rowspan="5"></td>
+                                                    <td rowspan="3">WH04589</td>
+                                                    <td>WH04589785S</td>
+                                                    <td>WH04589785S02</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>10</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-5">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S03</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-5">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S04</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-5">
+                                                  <td rowspan="2">WH04589</td>
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S05</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr class="SubLocationRow SubLocationRow-5">
+                                                  <td>WH04589785S</td>
+                                                  <td>WH04589785S06</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>10</td>
+                                                  <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Total</td>
+                                                  <td>12</td>
+                                                  <td>50</td>
+                                                  <td>678</td>
+                                                  <td>10000</td>
+                                                  <td>10345</td>
+                                                  <td>103224</td>
+                                                  <td>107890</td>
+                                                  <td>10123245</td>
+                                                  <td>10123</td>
+                                                  <th>1006789</th>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            
+                                        </div>                                                      
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                            <!-- end row -->
+            </div>
+            <!-- END container-fluid -->
+
+        </div>
+        <!-- END content -->
+
+    </div>
+    <!-- END content-page -->
+    
+    <footer class="footer">
+        <span class="float-right">
+        Powered by <a target="_blank" href="#">Divergent Consulting Services</a>
+        </span>
+    </footer>
+
+</div>
+<!-- END main -->
+
+<script src="assets/js/modernizr.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/moment.min.js"></script>
+        
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script src="assets/js/detect.js"></script>
+<script src="assets/js/fastclick.js"></script>
+<script src="assets/js/jquery.blockUI.js"></script>
+
+
+<!-- App js -->
+<script src="assets/js/pikeadmin.js"></script>
+
+<!-- BEGIN Java Script for this page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    
+    <!-- Counter-Up-->
+    <script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="assets/plugins/counterup/jquery.counterup.min.js"></script>            
+
+    <script type="text/javascript">
+        $(".LocationRow").click(function(){
+            let locid = $(this).attr("data-locid");
+            $(".SubLocationRow-"+locid).toggle();
+        });
+    </script>
+</body>
+</html>

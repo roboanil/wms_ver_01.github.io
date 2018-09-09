@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Admin Template</title>
+        <meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
+        <meta name="author" content="Pike Web Development - https://www.pikephp.com">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Bootstrap CSS -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Font Awesome CSS -->
+        <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Custom CSS -->
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+        
+        <!-- BEGIN CSS for this page -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
+        <!-- END CSS for this page -->
+        
+</head>
+
+<body class="adminbody">
+
+<div id="main">
+
+    <!-- top bar navigation -->
+    <div class="headerbar">
+
+        <!-- LOGO -->
+        <div class="headerbar-left">
+            <a href="index.html" class="logo">Warehouse Management</a>
+        </div>
+
+        <nav class="navbar-custom">
+                    <ul class="list-inline float-right mb-0">
+                    
+                        <li class="list-inline-item dropdown notif">
+                            <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <img src="assets/images/avatars/admin.png" alt="Profile image" class="avatar-rounded">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5 class="text-overflow"><small>Hello, admin</small> </h5>
+                                </div>
+
+                                <!-- item-->
+                                <a href="pro-profile.html" class="dropdown-item notify-item">
+                                    <i class="fa fa-user"></i> <span>Profile</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="#" class="dropdown-item notify-item">
+                                    <i class="fa fa-power-off"></i> <span>Logout</span>
+                                </a>
+                               
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <ul class="list-inline menu-left mb-0">
+                        <li class="float-left">
+                            <button class="button-menu-mobile open-left">
+                                <i class="fa fa-fw fa-bars"></i>
+                            </button>
+                        </li>                        
+                    </ul>
+
+        </nav>
+
+    </div>
+    <!-- End Navigation -->
+    
+ 
+    <!-- Left Sidebar -->
+    <div class="left main-sidebar">
+    
+        <div class="sidebar-inner leftscroll">
+
+            <div id="sidebar-menu">
+        
+            <ul>
+
+                    <li class="submenu">
+                        <a href="index.html"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
+                    </li>
+
+                    
+                    <li class="submenu">
+                        <a href="stock-information.html"><i class="fa fa-fw fa-table"></i> <span> Stock Information </span> </a>
+                    </li>
+                                        
+                    <li class="submenu">
+                        <a href="stock-visualisation.html" ><i class="fa fa-fw fa-th"></i> <span> Stock Visualization </span></a>
+                    </li>
+                    <li class="submenu">
+                        <a href="stock-inwards.html"><i class="fa fa-fw fa-indent"></i><span> Stock Inwards </span></a>
+                    </li>
+                    <li class="submenu">
+                        <a href="stock-outwards.html" class="active"><i class="fa fa-fw fa-outdent"></i><span> Stock Outwards </span></a>
+                    </li>
+                    <li class="submenu">
+                        <a href="reports.html"><i class="fa fa-fw fa-file-text-o"></i> <span> Reports </span> </a>
+                    </li>
+            </ul>
+            <div class="clearfix"></div>
+
+            </div>
+        
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+    <!-- End Sidebar -->
+
+
+    <div class="content-page">
+    
+        <!-- Start content -->
+        <div class="content">
+            
+            <div class="container-fluid">
+                    
+                        <div class="row">
+                                    <div class="col-xl-12">
+                                            <div class="breadcrumb-holder">
+                                                    <h1 class="main-title float-left">Stock Outwards</h1>
+                                                     
+                                                    <ol class="breadcrumb float-right">
+                                                        <li class="breadcrumb-item">
+                                                            <span class="stackinfo">  Hyderabad / WH04589 / WH04589785S</span>
+                                                        </li>
+                                                    </ol>
+                                                    <div class="clearfix"></div>
+                                            </div>
+                                    </div>
+                        </div>
+                        <!-- end row -->
+                              <div class="row">
+                                    
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-2">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="m-b-20">Top Lamina</h6>
+                                                    <h1 class="m-b-20  counter">54</h1>
+                                            </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-2">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="m-b-20">Burley</h6>
+                                                    <h1 class="m-b-20  counter">418</h1>
+                                            </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-2">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="m-b-20">Medium Lamina</h6>
+                                                    <h1 class="m-b-20  counter">518</h1>
+                                            </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-2">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="m-b-20">BPD</h6>
+                                                    <h1 class="m-b-20  counter">105</h1>
+                                            </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-2">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="m-b-20">Low Lamina</h6>
+                                                    <h1 class="m-b-20  counter">0</h1>
+                                            </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-2">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="m-b-20">Others</h6>
+                                                    <h1 class="m-b-20  counter">0</h1>
+                                            </div>
+                                    </div>
+
+                            </div>
+                            
+                            <div class="row">
+                                    
+                                                           
+                              <div class="col-md-3 card card-body" style="display: none;">
+                              <h6>Available Stock:</h6>
+                              <div class="textLeft">
+                                  Lamina Top: </div>
+                                  <div class="inputRight"><input type="number" class="textbox" name="w1" id="w1" value="1282" readonly></div>
+                                  <div class="textLeft">
+                                  Lamina Medium:</div>
+                                  <div class="inputRight"><input type="number" class="textbox" name="w2" id="w2" value="962" readonly></div>
+                                  <div class="textLeft">
+                                  Lamina Low:</div>
+                                  <div class="inputRight"><input type="number" class="textbox" name="w3" id="w3" value="962" readonly></div>
+                                  <div class="textLeft">
+                                  <button id="arrangeOpening" class="btn" style="display: none;"></button></div>
+                              </div>
+
+                             <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12">
+                              <div id="dialog" title="Dialog">
+                              </div>
+       
+    </div>
+
+       </div>
+
+                            <!-- end row -->
+            </div>
+            <!-- END container-fluid -->
+
+        </div>
+        <!-- END content -->
+
+    </div>
+    <!-- END content-page -->
+    
+    <footer class="footer">
+        <span class="float-right">
+        Powered by <a target="_blank" href="#">Divergent Consulting Services</a>
+        </span>
+    </footer>
+
+</div>
+<!-- END main -->
+
+<script src="assets/js/modernizr.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/moment.min.js"></script>
+        
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script src="assets/js/detect.js"></script>
+<script src="assets/js/fastclick.js"></script>
+<script src="assets/js/jquery.blockUI.js"></script>
+
+
+<!-- App js -->
+<script src="assets/js/pikeadmin.js"></script>
+
+<!-- BEGIN Java Script for this page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    
+    <!-- Counter-Up-->
+    <script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="assets/plugins/counterup/jquery.counterup.min.js"></script>            
+
+    <script type="text/javascript">
+        $(".LocationRow").click(function(){
+            let locid = $(this).attr("data-locid");
+            $(".SubLocationRow-"+locid).toggle();
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/91/three.min.js"></script>
+    <script src="http://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script src="displayalgo-outwards.js"></script>
+    <script src="algo.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
+    <script>
+        $(function() {
+           
+            setTimeout(function(){
+                var w1 = parseInt($("#w1").val());
+                var w2 = parseInt($("#w2").val());
+                var w3 = parseInt($("#w3").val());
+
+                cubesPerStackArray = calcStacksAndCubes(w1,w2,w3);
+                renderStacksInfo(cubesPerStackArray);
+
+            },2000);
+            
+
+        });
+    </script>
+</body>
+</html>

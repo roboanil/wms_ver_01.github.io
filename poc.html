@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Warehouse Management | ITC</title>
+    <link rel='stylesheet' href='style.css' type='text/css' media='all' />
+    <link href="css/styles.min.css" rel="stylesheet">
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/start/jquery-ui.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>
+        if (top !== self) {
+            $.ui.dialog.prototype._focusTabbable = $.noop;
+        }
+    </script>
+</head>
+<body>
+<div class="dashBoard">
+        <div class="logoBlock"> 
+        <img src="itc-logo.jpg">
+        </div>
+        <div class="availableStock">
+        <h2>Available Stock:</h2>
+        <div class="textLeft">
+            Lamina Top: </div>
+            <div class="inputRight"><input type="number" name="w1" id="w1" value="1282" readonly></div>
+            <div class="textLeft">
+            Lamina Medium:</div>
+            <div class="inputRight"><input type="number" name="w2" id="w2" value="962" readonly></div>
+            <div class="textLeft">
+            Lamina Low:</div>
+            <div class="inputRight"><input type="number" name="w3" id="w3" value="962" readonly></div>
+            <div class="textLeft">
+            <button id="arrangeOpening" class="btn" style="display: none;"></button></div>
+        </div>
+
+        <div class="incomingStock">
+            <h2>In Coming Stock : </h2>
+            <div class="buttonDiv">
+            <button id="inarrange" class="btn" tabindex="4">Arrange</button></div>
+            <div class="textLeft">
+            Lamina Top:</div>
+            <div class="inputRight"><input type="number" name="iw1" id="iw1" tabindex="1"></div>
+            <div class="textLeft">
+            Lamina Medium:</div>
+            <div class="inputRight"><input type="number" name="iw2" id="iw2" tabindex="2"></div>
+            <div class="textLeft">
+            Lamina Low:</div>
+            <div class="inputRight"><input type="number" name="iw3" id="iw3" tabindex="3"></div>
+            
+        </div>
+
+        <div class="outgoingStock">
+            <h2>Out Going Stock : </h2>
+            <div class="buttonDiv">
+            <button id="outarrange" class="btn" tabindex="8">Arrange</button></div>
+            <div class="textLeft">
+            Lamina Top:</div>
+            <div class="inputRight"><input type="number" name="ow1" id="ow1" tabindex="5"></div>
+            <div class="textLeft">
+            Lamina Medium:</div>
+            <div class="inputRight"><input type="number" name="ow2" id="ow2" tabindex="6"></div>
+            <div class="textLeft">
+            Lamina Low:</div>
+            <div class="inputRight"><input type="number" name="ow3" id="ow3" tabindex="7"></div>
+            
+        </div>
+
+        <div class="stockStats">
+            <h2>Stack Statistics: </h2>
+            <div class="textLeft">
+            Current Process:</div>
+            <div class="inputRight"><input type="number" name="ssc" id="ssc" ></div>
+            <div class="textLeft">
+            Proposed Process:</div>
+            <div class="inputRight"><input type="number" name="ssp" id="ssp" ></div>
+        </div>
+    </div>
+
+    <div id="dialog" title="Dialog">
+        <p>Box Information</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/91/three.min.js"></script>
+    <script src="http://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script src="displayalgo.js"></script>
+    <script src="algo.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
+    <script>
+        $(function() {
+            $("#dialog").dialog({
+                autoOpen: false
+            });
+            // $("#button").on("click", function() {
+            //     $("#dialog").dialog("open");
+            // });
+        });
+    </script>
+</body>
+</html>

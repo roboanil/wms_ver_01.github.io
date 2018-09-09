@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Admin Template</title>
+        <meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
+        <meta name="author" content="Pike Web Development - https://www.pikephp.com">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Bootstrap CSS -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Font Awesome CSS -->
+        <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Custom CSS -->
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+        
+        <!-- BEGIN CSS for this page -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
+        <!-- END CSS for this page -->
+        
+</head>
+
+<body class="adminbody">
+
+<div id="main">
+
+    <!-- top bar navigation -->
+    <div class="headerbar">
+
+        <!-- LOGO -->
+        <div class="headerbar-left">
+            <a href="index.html" class="logo">Warehouse Management</a>
+        </div>
+
+        <nav class="navbar-custom">
+                    <ul class="list-inline float-right mb-0">
+                    
+                        <li class="list-inline-item dropdown notif">
+                            <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <img src="assets/images/avatars/admin.png" alt="Profile image" class="avatar-rounded">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5 class="text-overflow"><small>Hello, admin</small> </h5>
+                                </div>
+
+                                <!-- item-->
+                                <a href="pro-profile.html" class="dropdown-item notify-item">
+                                    <i class="fa fa-user"></i> <span>Profile</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="#" class="dropdown-item notify-item">
+                                    <i class="fa fa-power-off"></i> <span>Logout</span>
+                                </a>
+                                
+                                
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <ul class="list-inline menu-left mb-0">
+                        <li class="float-left">
+                            <button class="button-menu-mobile open-left">
+                                <i class="fa fa-fw fa-bars"></i>
+                            </button>
+                        </li>                        
+                    </ul>
+
+        </nav>
+
+    </div>
+    <!-- End Navigation -->
+    
+ 
+    <!-- Left Sidebar -->
+    <div class="left main-sidebar">
+    
+        <div class="sidebar-inner leftscroll">
+
+            <div id="sidebar-menu">
+        
+            <ul>
+
+                    <li class="submenu">
+                        <a href="index.html" class="active"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
+                    </li>
+
+                    
+                    <li class="submenu">
+                        <a href="stock-information.html"><i class="fa fa-fw fa-table"></i> <span> Stock Information </span> </a>
+                    </li>
+                                        
+                    <li class="submenu">
+                        <a href="stock-visualisation.html" ><i class="fa fa-fw fa-th"></i> <span> Stock Visualization </span></a>
+                    </li>
+                    <li class="submenu">
+                        <a href="stock-inwards.html"><i class="fa fa-fw fa-indent"></i><span> Stock Inwards </span></a>
+                    </li>
+                    <li class="submenu">
+                        <a href="stock-outwards.html" ><i class="fa fa-fw fa-outdent"></i><span> Stock Outwards </span></a>
+                    </li>
+                    <li class="submenu">
+                        <a href="reports.html"><i class="fa fa-fw fa-file-text-o"></i> <span> Reports </span> </a>
+                    </li>
+            </ul>
+
+            <div class="clearfix"></div>
+
+            </div>
+        
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+    <!-- End Sidebar -->
+
+
+    <div class="content-page">
+    
+        <!-- Start content -->
+        <div class="content">
+            
+            <div class="container-fluid">
+                    
+                        <div class="row">
+                                    <div class="col-xl-12">
+                                            <div class="breadcrumb-holder">
+                                                    <h1 class="main-title float-left">Dashboard</h1>
+                                                    <ol class="breadcrumb float-right">
+                                                        <li class="breadcrumb-item">Home</li>
+                                                        <li class="breadcrumb-item active">Dashboard</li>
+                                                    </ol>
+                                                    <div class="clearfix"></div>
+                                            </div>
+                                    </div>
+                        </div>
+                        <!-- end row -->
+
+                            <div class="row">
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                                            <div class="card-box noradius noborder   bg-info">
+                                                    <h6 class=" m-b-20">Total Capacity</h6>
+                                                    <h1 class="m-b-20  counter">150,000</h1>
+                                            </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="  m-b-20">Current Stock</h6>
+                                                    <h1 class="m-b-20 counter">100,682</h1>
+                                            </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="  m-b-20">Space Available</h6>
+                                                    <h1 class="m-b-20  counter">49,318</h1>
+                                            </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="m-b-20">Cases in Quarantine zone</h6>
+                                                    <h1 class="m-b-20  counter">5,418</h1>
+                                            </div>
+                                    </div>
+                            </div>
+                            <!-- end row -->
+
+
+                            
+                            <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">                      
+                                        <div class="card mb-3">
+                                            <div class="card-body">
+                                                <canvas id="pieChart1"></canvas>
+                                            </div>
+                                        </div><!-- end card-->                  
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3">                      
+                                                <div class="card-box noradius noborder bg-info">
+                                                    <h6 class=" m-b-20">Stacks under fumigation</h6>
+                                                    <h1 class="m-b-20  counter">56</h1>
+                                                 </div>
+                                                 
+                                                 <div class="card-box noradius noborder bg-info">
+                                                    <h6 class=" m-b-20">Top Lamina</h6>
+                                                    <h1 class="m-b-20  counter">11,528</h1>
+                                                 </div>
+                                                 <div class="card-box noradius noborder bg-info">
+                                                    <h6 class=" m-b-20">Burley</h6>
+                                                    <h1 class="m-b-20  counter">19,463</h1>
+                                                 </div> 
+                                                 <div class="card-box noradius noborder bg-info">
+                                                    <h6 class=" m-b-20">Others</h6>
+                                                    <h1 class="m-b-20  counter">3,532</h1>
+                                                 </div>                                                  
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3">
+                                    <div class="card-box noradius noborder bg-info">
+                                                    <h6 class=" m-b-20">Old Crop</h6>
+                                                    <h1 class="m-b-20  counter">15,508</h1>
+                                                 </div>                         
+                                        <div class="card-box noradius noborder bg-info">
+                                                    <h6 class=" m-b-20">Medium Lamina</h6>
+                                                    <h1 class="m-b-20  counter">49,996</h1>
+                                                 </div>
+                                                 <div class="card-box noradius noborder bg-info">
+                                                    <h6 class=" m-b-20">BPD</h6>
+                                                    <h1 class="m-b-20  counter">6,672</h1>
+                                                 </div> 
+                                                 <div class="card-box noradius noborder bg-info">
+                                                    <h6 class=" m-b-20">Low Lamina</h6>
+                                                    <h1 class="m-b-20  counter">9,491</h1>
+                                                 </div>         
+                                    </div>
+                            </div>
+                            <!-- end row -->
+            </div>
+            <!-- END container-fluid -->
+
+        </div>
+        <!-- END content -->
+
+    </div>
+    <!-- END content-page -->
+    
+    <footer class="footer">
+        <span class="float-right">
+        Powered by <a target="_blank" href="#">Divergent Consulting Services</a>
+        </span>
+    </footer>
+
+</div>
+<!-- END main -->
+
+<script src="assets/js/modernizr.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/moment.min.js"></script>
+        
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script src="assets/js/detect.js"></script>
+<script src="assets/js/fastclick.js"></script>
+<script src="assets/js/jquery.blockUI.js"></script>
+
+
+<!-- App js -->
+<script src="assets/js/pikeadmin.js"></script>
+
+<!-- BEGIN Java Script for this page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    
+    <!-- Counter-Up-->
+    <script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="assets/plugins/counterup/jquery.counterup.min.js"></script>            
+
+    <script>
+        $(document).ready(function() {
+                    
+            // counter-up
+            $('.counter').counterUp({
+                delay: 10,
+                time: 600
+            });
+        } );        
+    </script>
+    
+	
+	<script>
+	var ctx1 = document.getElementById("pieChart1").getContext('2d');
+	var pieChart = new Chart(ctx1, {
+		type: 'pie',
+		data: {
+				datasets: [{
+					data: [11528, 19463, 49996, 3532, 6672, 9491,49318],
+					backgroundColor: [
+						
+						'#003f5c',
+						'#444e86',
+						'#955196',
+						'#dd5182',
+						'#ff6e54',
+                        '#ffa600',
+                        '#dbe1f0'
+					],
+					label: 'Dataset 1'
+				}],
+				labels: [
+					"Top Lamina",
+					"Burley",
+					"Medium Lamina",
+					"Others",
+					"BPD",
+					"Low Lamina",
+                    "Free Space",
+				]
+			},
+			options: {
+				responsive: true
+			}
+	 
+	});
+	</script>
+<!-- END Java Script for this page -->
+
+</body>
+</html>

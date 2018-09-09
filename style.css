@@ -1,0 +1,125 @@
+ body
+    {
+        min-width:1300px;
+    }
+    canvas { width: 100%; height: 100% }
+    *{
+        margin:0;
+        font-family: 'Chicle', cursive;
+        letter-spacing: 1px;
+        font-weight: 100;
+        outline: none;
+    }
+    .dashBoard{
+        float: left;
+        width: 100%;
+        border-bottom: 1px solid #9c5875;
+
+    }
+    h2{
+        font-weight: 400;
+        line-height: 20px;
+        margin-bottom: 10px; 
+        float: left;
+    }
+    h3
+    {
+        font-weight: 400;
+        float: left;
+        width: 100%;
+        text-align: center;
+        color: #9c5875;
+        border-bottom: 1px solid;
+    }
+    h4
+    {
+        font-weight: 400;
+        float: left;
+        width: 100%;
+        text-align: center;
+        color: #9c5875;
+    }
+    .calcInDiv{
+        float:left;
+        margin:10px;
+        border:1px solid;
+        width: 312px;
+    }
+    .logoBlock{
+        padding-top:15px;
+        float: left;
+        height: 130px;
+        width:250px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .availableStock,.incomingStock,.outgoingStock,.stockStats
+    { 
+        padding: 0.5%;
+        float: left;
+        width:19%;
+        height: 130px;
+        border-left: 1px solid #9c5875;
+    }
+
+    .availableStock input,.stockStats input{
+        background: none;
+        border: 0px solid;
+        color: #2b8aca;
+        font-weight: bold;
+    }
+
+    .textLeft,.inputRight{
+        float: left;
+        width:46%;
+        padding:2%;
+        
+    }
+    .buttonDiv{
+        float: right;
+        width: 80px;
+        margin-top: -5px;
+        margin-bottom: 5px;
+    }
+    .textLeft{
+        color: #9c5875;
+    }
+    #calcDiv{
+        padding: 10px;
+    }
+    input {
+        border-radius: 3px;
+        border:1px solid #9c5875;
+        padding: 3px;
+    }
+    .btn {
+        background: #7db5db;
+        background-image: -webkit-linear-gradient(top, #7db5db, #007bc7);
+        background-image: -moz-linear-gradient(top, #7db5db, #007bc7);
+        background-image: -ms-linear-gradient(top, #7db5db, #007bc7);
+        background-image: -o-linear-gradient(top, #7db5db, #007bc7);
+        background-image: linear-gradient(to bottom, #7db5db, #007bc7);
+        -webkit-border-radius: 4;
+        -moz-border-radius: 4;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 1px 3px #666666;
+        -moz-box-shadow: 0px 1px 3px #666666;
+        box-shadow: 0px 1px 3px #666666;
+        color: #ffffff;
+        font-size: 14px;
+        padding: 5px 15px 5px 15px;
+        text-decoration: none;
+        border: 0px solid #7db5db;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: #3cb0fd;
+        background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+        text-decoration: none;
+    }
+    
