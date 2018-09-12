@@ -4,10 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <title>Admin Template</title>
-        <meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
-        <meta name="author" content="Pike Web Development - https://www.pikephp.com">
-
+        <title>Current stock 3D view</title>
+        
         <!-- Favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
@@ -24,7 +22,6 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
         <!-- END CSS for this page -->
         <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/start/jquery-ui.min.css" rel="stylesheet">
-
 </head>
 
 <body class="adminbody">
@@ -111,6 +108,9 @@
                     </li>
                     <li class="submenu">
                         <a href="reports.html"><i class="fa fa-fw fa-file-text-o"></i> <span> Reports </span> </a>
+                    </li>
+                    <li class="submenu">
+                        <a href="comparision.html" ><i class="fa fa-fw fa-adjust"></i> <span> Stack Utilization </span> </a>
                     </li>
             </ul>
             <div class="clearfix"></div>
@@ -274,11 +274,6 @@
     </footer>
 
 </div>
-
-<!-- <div id="dialog" title="Dialog">
-    <p>Box Information</p>
-</div> -->
-
 <!-- END main -->
 
 <script src="assets/js/modernizr.min.js"></script>
@@ -294,6 +289,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <script>if(top!==self){$.ui.dialog.prototype._focusTabbable=$.noop;}</script>
+
 <!-- App js -->
 <script src="assets/js/pikeadmin.js"></script>
 
@@ -322,7 +318,7 @@
             $("#dialog").dialog({
                 autoOpen: false
             });
-        });        
+        });
     </script> -->
 </body>
 </html>

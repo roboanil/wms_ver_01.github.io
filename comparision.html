@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Stacking procedure</title>
+        
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Bootstrap CSS -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Font Awesome CSS -->
+        <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Custom CSS -->
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+        
+        <!-- BEGIN CSS for this page -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
+        <!-- END CSS for this page -->
+        
+</head>
+<style type="text/css">
+  .textbox{width: 80%}
+  .buttonDiv{width: 100%;padding-top: 10px;}
+  .btn-primary{width: 30%;float: right;margin-right:10%;}
+  .readonly{border:0px solid; width: 100%; font-size: 32px;}
+  .totcounttext{
+    color: #212121;
+    font-size: 14px;
+    padding-left: 20px;
+  }
+  .totcount{
+    color: Green;
+    font-size: 16px;
+    font-weight: 600;
+  }
+</style>
+<body class="adminbody">
+
+<div id="main">
+
+    <!-- top bar navigation -->
+    <div class="headerbar">
+
+        <!-- LOGO -->
+        <div class="headerbar-left">
+            <a href="index.html" class="logo">Warehouse Management</a>
+        </div>
+
+        <nav class="navbar-custom">
+                    <ul class="list-inline float-right mb-0">
+                    
+                        
+                        <li class="list-inline-item dropdown notif">
+                            <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <img src="assets/images/avatars/admin.png" alt="Profile image" class="avatar-rounded">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5 class="text-overflow"><small>Hello, admin</small> </h5>
+                                </div>
+
+                                <!-- item-->
+                                <a href="pro-profile.html" class="dropdown-item notify-item">
+                                    <i class="fa fa-user"></i> <span>Profile</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="#" class="dropdown-item notify-item">
+                                    <i class="fa fa-power-off"></i> <span>Logout</span>
+                                </a>
+                                
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <ul class="list-inline menu-left mb-0">
+                        <li class="float-left">
+                            <button class="button-menu-mobile open-left">
+                                <i class="fa fa-fw fa-bars"></i>
+                            </button>
+                        </li>                        
+                    </ul>
+
+        </nav>
+
+    </div>
+    <!-- End Navigation -->
+    
+ 
+    <!-- Left Sidebar -->
+    <div class="left main-sidebar">
+    
+        <div class="sidebar-inner leftscroll">
+
+            <div id="sidebar-menu">
+        
+            <ul>
+
+                    <li class="submenu">
+                        <a href="index.html"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
+                    </li>
+
+                    
+                    <li class="submenu">
+                        <a href="stock-information.html"><i class="fa fa-fw fa-table"></i> <span> Stock Information </span> </a>
+                    </li>
+                                        
+                    <li class="submenu">
+                        <a href="stock-visualisation.html" ><i class="fa fa-fw fa-th"></i> <span> Stock Visualization </span></a>
+                    </li>
+                    <li class="submenu">
+                        <a href="stock-inwards.html"><i class="fa fa-fw fa-indent"></i><span> Stock Inwards </span></a>
+                    </li>
+                    <li class="submenu">
+                        <a href="stock-outwards.html" ><i class="fa fa-fw fa-outdent"></i><span> Stock Outwards </span></a>
+                    </li>
+                    <li class="submenu">
+                        <a href="reports.html"><i class="fa fa-fw fa-file-text-o"></i> <span> Reports </span> </a>
+                    </li>
+                    <li class="submenu">
+                        <a href="comparision.html" class="active"><i class="fa fa-fw fa-adjust"></i> <span> Stack Utilization </span> </a>
+                    </li>
+            </ul>
+
+            <div class="clearfix"></div>
+
+            </div>
+        
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+    <!-- End Sidebar -->
+
+
+    <div class="content-page">
+    
+        <!-- Start content -->
+        <div class="content">
+            
+            <div class="container-fluid">
+                    
+                        <div class="row">
+                                    <div class="col-xl-12">
+                                            <div class="breadcrumb-holder">
+                                                    <h1 class="main-title float-left">Stack Utilization<span class="totcounttext">Total Cases:</span> <span class="totcount"></span></h1>
+                                                    <ol class="breadcrumb float-right">
+                                                        Current Procedure Vs New Proposal
+                                                    </ol>
+                                                    <div class="clearfix"></div>
+                                            </div>
+                                    </div>
+                        </div>
+                        <!-- end row -->
+<div class="row">
+                                    
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-2">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="m-b-20">Top Lamina</h6>
+                                                    <h1 class="m-b-20  counter" id="top">2912</h1>
+                                            </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-2">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="m-b-20">Burley</h6>
+                                                    <h1 class="m-b-20  counter" id="burley">2530</h1>
+                                            </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-2">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="m-b-20">Medium Lamina</h6>
+                                                    <h1 class="m-b-20  counter" id="medium">14189</h1>
+                                            </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-2">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="m-b-20">BPD</h6>
+                                                    <h1 class="m-b-20  counter" id="bpd">996</h1>
+                                            </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-2">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="m-b-20">Low Lamina</h6>
+                                                    <h1 class="m-b-20  counter" id="low">2570</h1>
+                                            </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-2">
+                                            <div class="card-box noradius noborder bg-info">
+                                                    <h6 class="m-b-20">Others</h6>
+                                                    <h1 class="m-b-20  counter" id="others">1673</h1>
+                                            </div>
+                                    </div>
+
+                            </div>
+                           
+                            <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">                      
+                                        <div class="card mb-3">
+                                        <div class="card-header">
+                                            <h3>Incoming Stock</h3>
+                                        </div>
+                                            <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                  <div class="textLeft">
+                                                  Top:</div>
+                                                  <div class="inputRight"><input type="number" name="iw1" id="iw1" class="textbox" ></div>
+                                                  
+                                                  <div class="textLeft">
+                                                  Medium:</div>
+                                                  <div class="inputRight"><input type="number" name="iw2" id="iw2" class="textbox" ></div>
+                                                  <div class="textLeft">
+                                                  Low:</div>
+                                                  <div class="inputRight"><input type="number" name="iw3" id="iw3" class="textbox" ></div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                
+                                                  <div class="textLeft">
+                                                  Burly:</div>
+                                                  <div class="inputRight"><input type="number" name="iw4" id="iw4" class="textbox" ></div>
+                                                  <div class="textLeft">
+                                                  BPD:</div>
+                                                  <div class="inputRight"><input type="number" name="iw5" id="iw5" class="textbox" ></div>
+                                                  
+                                                  <div class="textLeft">
+                                                  Others:</div>
+                                                  <div class="inputRight"><input type="number" name="iw6" id="iw6" class="textbox" ></div>
+                                                  
+                                              </div> 
+
+                                              <div class="buttonDiv">
+                                                  <button id="inarrange" class="btn btn-primary" style="padding-top: 2px; padding-bottom:0px; margin-bottom: 2px;"  >Arrange</button></div> 
+                                             
+                                                    
+                                              </div>
+
+        
+                                            </div>
+                                        </div><!-- end card-->                  
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">                      
+                                        <div class="card mb-3">
+                                        <div class="card-header">
+                                            <h3>Outgoing Stock</h3>
+                                        </div>
+                                            <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                  
+                                                  <div class="textLeft">
+                                                  Top:</div>
+                                                  <div class="inputRight"><input type="number" name="ow1" id="ow1" class="textbox" ></div>
+                                                  
+                                                  <div class="textLeft">
+                                                  Medium:</div>
+                                                  <div class="inputRight"><input type="number" name="ow2" id="ow2" class="textbox" ></div>
+                                                  <div class="textLeft">
+                                                  Low:</div>
+                                                  <div class="inputRight"><input type="number" name="ow3" id="ow3" class="textbox" ></div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                
+                                                  <div class="textLeft">
+                                                  Burly:</div>
+                                                  <div class="inputRight"><input type="number" name="ow4" id="ow4" class="textbox" ></div>
+                                                  <div class="textLeft">
+                                                  BPD:</div>
+                                                  <div class="inputRight"><input type="number" name="ow5" id="ow5" class="textbox" ></div>
+                                                  
+                                                  <div class="textLeft">
+                                                  Others:</div>
+                                                  <div class="inputRight"><input type="number" name="ow6" id="ow6" class="textbox" ></div>
+                                                  
+                                              </div>
+                                              <div class="buttonDiv">
+                                                  <button id="outarrange" class="btn btn-primary" style="padding-top: 2px; padding-bottom:0px; margin-bottom: 2px;"  >Arrange</button></div>    
+                                              </div>
+
+        
+                                            </div>
+                                        </div><!-- end card-->                  
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">                        
+                                    <div class="card mb-3">
+                                        <div class="card-header">
+                                            <h3>Stack Statistics</h3>
+                                        </div>
+                                            
+                                        <div class="card-body">     
+                                            Total Stacks : 552<br><br>                        
+                                            Current Process:<input type="number" name="ssc" id="ssc" style="color: red" value="0" class="textbox readonly" readonly >
+                                            Proposed Process:<input type="number" name="ssp" id="ssp" style="color:green" value="0" class="textbox readonly" readonly >
+                                        </div>                                                      
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- end row -->
+            </div>
+            <!-- END container-fluid -->
+
+        </div>
+        <!-- END content -->
+
+    </div>
+    <!-- END content-page -->
+    
+    <footer class="footer">
+        <span class="float-right">
+        Powered by <a target="_blank" href="#">Divergent Consulting Services</a>
+        </span>
+    </footer>
+
+</div>
+<!-- END main -->
+
+<script src="assets/js/modernizr.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/moment.min.js"></script>
+        
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script src="assets/js/detect.js"></script>
+<script src="assets/js/fastclick.js"></script>
+<script src="assets/js/jquery.blockUI.js"></script>
+
+
+
+<script type="text/javascript">
+var iw1=parseInt($("#top").text())+parseInt($("#burley").text()),iw2=parseInt($("#medium").text())+parseInt($("#bpd").text()),iw3=parseInt($("#low").text())+parseInt($("#others").text());function calcCurrentStacksAndCubes(){setTimeout(function(){var t=parseInt($("#top").text()),e=parseInt($("#medium").text()),a=parseInt($("#low").text()),r=parseInt($("#burley").text()),n=parseInt($("#bpd").text()),s=parseInt($("#others").text()),p=Math.ceil((t+r)/216)+Math.ceil((e+n)/168)+Math.ceil((a+s)/112);$("#ssc").val(p),$(".totcount").html(t+e+a+r+n+s)},100)}function calcNewStackingProcedure(t,e,a){var r=((t+e+a)/216).toFixed(2),n=(t/r).toFixed(),s=(e/r).toFixed(),p=216-(parseInt(n)+parseInt(s));s>160&&(n=(t/(r=(e/(s=160)).toFixed(2))).toFixed(),s=(e/r).toFixed(),p=216-(parseInt(n)+parseInt(s))),p>104&&(n=(t/(r=(a/(p=104)).toFixed(2))).toFixed(),s=(e/r).toFixed()),$("#ssp").val(r)}calcCurrentStacksAndCubes(),calcNewStackingProcedure(iw1,iw2,iw3),$(document).on("click","#inarrange",function(){var t=parseInt($("#top").text()),e=parseInt($("#medium").text()),a=parseInt($("#low").text()),r=parseInt($("#burley").text()),n=parseInt($("#bpd").text()),s=parseInt($("#others").text()),p=$("#iw1").val()+$("#iw4").val(),o=$("#iw2").val()+$("#iw5").val(),I=$("#iw3").val()+$("#iw6").val();if(""==p||""==o||""==I)return!1;$("#top").text(parseInt(t)+parseInt($("#iw1").val())),$("#medium").text(parseInt(e)+parseInt($("#iw2").val())),$("#low").text(parseInt(a)+parseInt($("#iw3").val())),$("#burley").text(parseInt(r)+parseInt($("#iw4").val())),$("#bpd").text(parseInt(n)+parseInt($("#iw5").val())),$("#others").text(parseInt(s)+parseInt($("#iw6").val())),$("#iw1,#iw2,#iw3,#iw4,#iw5,#iw6").val("");p=parseInt($("#top").text())+parseInt($("#burley").text()),o=parseInt($("#medium").text())+parseInt($("#bpd").text()),I=parseInt($("#low").text())+parseInt($("#others").text());calcCurrentStacksAndCubes(),calcNewStackingProcedure(p,o,I)}),$(document).on("click","#outarrange",function(){var t=parseInt($("#top").text()),e=parseInt($("#medium").text()),a=parseInt($("#low").text()),r=parseInt($("#burley").text()),n=parseInt($("#bpd").text()),s=parseInt($("#others").text()),p=$("#ow1").val()+$("#ow4").val(),o=$("#ow2").val()+$("#ow5").val(),I=$("#ow3").val()+$("#ow6").val();if(""==p||""==o||""==I||""==ow4||""==ow5||""==ow6)return!1;$("#top").text(t-parseInt($("#ow1").val())),$("#medium").text(parseInt(e)-parseInt($("#ow2").val())),$("#low").text(parseInt(a)-parseInt($("#ow3").val())),$("#burley").text(parseInt(r)-parseInt($("#ow4").val())),$("#bpd").text(parseInt(n)-parseInt($("#ow5").val())),$("#others").text(parseInt(s)-parseInt($("#ow6").val())),$("#ow1,#ow2,#ow3,#ow4,#ow5,#ow6").val("");var i=parseInt($("#top").text())+parseInt($("#burley").text()),l=parseInt($("#medium").text())+parseInt($("#bpd").text()),w=parseInt($("#low").text())+parseInt($("#others").text());calcCurrentStacksAndCubes(),calcNewStackingProcedure(i,l,w)});
+
+</script>
+
+</body>
+</html>
